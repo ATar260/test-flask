@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dummy Google-like Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 150px;
+        }
+        #logo {
+            margin-bottom: 25px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+        h3 {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="logo">
+        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo">
+    </div>
+    <form action="/" method="post">
+        <input type="text" name="prompt" placeholder="Search the web..." required>
+        <br>
+        <button type="submit">Google Search test</button>
+    </form>
+    <hr>
+<!-- ... same as before ... -->
+
+{% if response_urls %}
+    <h3>Responses:</h3>
+    <ul>
+        {% for url in response_urls %}
+            <li><a href="{{ url }}">Click here for a response</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<!-- ... same as before ... -->
+
+</body>
+</html>
+
+
